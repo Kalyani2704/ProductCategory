@@ -21,8 +21,8 @@ public class CategoryController {
 	@Autowired
 	private CategoryService serv;
 	
-	@GetMapping("/page={pageSize}")
-	public Page<Category> getCategory(@PathVariable int pageSize){
+	@GetMapping("")
+	public Page<Category> getCategory(@RequestParam(name="page", required=true) Integer pageSize){
 		return serv.getCategory(pageSize);
 	}
 	
